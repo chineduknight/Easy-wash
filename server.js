@@ -11,16 +11,21 @@ connectDB()
 
 const app = express()
 
+//init middleware
+app.use(express.json({ extended: false }))
+
+//routes
+app.use("/", require("./routes/landing"))
+app.use("/api/v1/", require("./routes/v1/index"))
+
 //Body Parser
 app.use(express.json())
 const PORT = process.env.PORT || 5000
 
-const server = app.listen(
+app.listen(
   PORT,
   console.log(
     `Server running in ${process.env.NODE_ENV} mode on port ${PORT} `.yellow
       .bold
   )
 )
-
-
