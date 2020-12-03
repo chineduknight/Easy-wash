@@ -16,6 +16,6 @@ exports.protect = async (req, res, next) => {
     req.user = decoded.user
     next()
   } catch (error) {
-    res.status(500).json({ message: "Token not valid" })
+    return res.status(500).json({ message: "Token not valid" })
   }
 }
