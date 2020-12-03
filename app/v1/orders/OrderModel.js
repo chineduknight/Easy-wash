@@ -1,5 +1,5 @@
 const mongoose = require("mongoose")
-const { WASHTIMES, WASHTYPES, DELIVERY_METHOD } = require("../../../../Constant")
+const { WASHTIMES, WASHTYPES, DELIVERY_METHOD } = require("../../../Constant")
 
 const OrderSchema = mongoose.Schema({
   user_id: {

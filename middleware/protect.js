@@ -5,7 +5,7 @@ exports.protect = async (req, res, next) => {
     console.log(req.header)
     //get token from header
     const token = req.header("Authorization").split(" ")[1]
-    console.log(token)
+    //console.log(token)
 
     //check validity of token
     if (!token) {

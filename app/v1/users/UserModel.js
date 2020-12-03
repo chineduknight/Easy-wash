@@ -1,7 +1,7 @@
 const mongoose = require("mongoose")
 const crypto = require("crypto")
 const bcrypt = require("bcrypt")
-const geocoder = require("../utils/geocoder")
+const geocoder = require("../../../utils/geoCoder")
 const { ROLES } = require("../../../Constant")
 
 const UserSchema = mongoose.Schema({
@@ -52,7 +52,7 @@ const UserSchema = mongoose.Schema({
   resetPasswordExpire: Date,
   createdAt: {
     type: Date,
-    default: Date.now 
+    default: Date.now
   }
 })
 
@@ -81,7 +81,7 @@ UserSchema.pre("save", async function (next) {
   }
 
   // Do not save address in DB
-  this.address = undefined
+  // this.address = undefined
   next()
 })
 
