@@ -10,7 +10,7 @@ const OrderSchema = mongoose.Schema({
   vendor: {},
   items: {
     type: mongoose.Schema.ObjectId,
-    ref: "Garments",
+    ref: "Garmentorderdetail",
     required: true
   },
   deliveryFee: { type: Number },
@@ -36,4 +36,4 @@ const OrderSchema = mongoose.Schema({
   additionalInfo: { type: String }
 })
 
-module.exports = mongoose.model("orders", OrderSchema)
+module.exports = mongoose.model("order", OrderSchema)

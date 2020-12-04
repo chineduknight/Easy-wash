@@ -8,4 +8,4 @@ const { protect } = require("../../middleware/protect")
 router.get("/get_vendors/:distance", protect, dashboardController.getVendors)
 
 module.exports = router
- 
+  

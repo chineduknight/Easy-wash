@@ -9,15 +9,11 @@ const GarmentSchema = mongoose.Schema({
     required: true
   },
 
-  order: {
+  vendorID: {
     type: mongoose.Schema.ObjectId,
-    ref: "Orders",
+    ref: "User",
     required: true
-  },
-
-  vendorID:{
-
   }
 })
 
-module.exports = mongoose.model("garments", GarmentSchema)
+module.exports = mongoose.model("garment", GarmentSchema)
