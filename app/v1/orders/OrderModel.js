@@ -4,10 +4,10 @@ const { WASHTIMES, WASHTYPES, DELIVERY_METHOD } = require("../../../Constant")
 const OrderSchema = mongoose.Schema({
   user_id: {
     type: mongoose.Schema.ObjectId,
-    ref: "Users",
+    ref: "User",
     required: true
   },
-  vendor: {},
+  vendor_id: { type: mongoose.Schema.ObjectId, ref: "User", required: true },
   items: {
     type: mongoose.Schema.ObjectId,
     ref: "Garmentorderdetail",
@@ -29,10 +29,10 @@ const OrderSchema = mongoose.Schema({
   deliveryMethod: {
     type: String,
     enum: DELIVERY_METHOD,
-    default: "SELF DROP OFF"
+    default: "SELF DROP-OFF"
   },
-  dropOffDate: { type: Date },
-  pIckUpDate: { type: Date },
+  dropOffDate: { type: Date, default: Date.now() },
+  pickUpDate: { type: Date, default: Date.now()+ 7*24*86400*1000 },
   additionalInfo: { type: String }
 })
 

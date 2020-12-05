@@ -1,10 +1,5 @@
 const mongoose = require("mongoose")
 const GarmentOrderDetailSchema = mongoose.Schema({
-  orderID: {
-    type: mongoose.Schema.ObjectId,
-    ref: "Order",
-    required: true
-  },
   details: [
     {
       name: {
@@ -19,10 +14,13 @@ const GarmentOrderDetailSchema = mongoose.Schema({
         type: Number,
         required: true
       }
-    }
+    } 
   ]
-
-  //   vendorID: {}
+  // orderID: {
+  //   type: mongoose.Schema.ObjectId,
+  //   ref: "Order",
+  //   required: true
+  // },
 })
 
 module.exports = mongoose.model("garmentorderdetail", GarmentOrderDetailSchema)
